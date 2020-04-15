@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="39px" height="92px" viewBox="0 0 39 92" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 63.1 (92452) - https://sketch.com -->
+    <title>arrow-up-down</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Sub-final" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linejoin="round">
+        <g id="playlist/dragged" transform="translate(-361.000000, -283.000000)" stroke="#FFFFFF" stroke-width="2">
+            <g id="arrow-up-down" transform="translate(362.000000, 284.000000)">
+                <polyline id="Path" stroke-linecap="round" transform="translate(18.400000, 77.969231) rotate(-180.000000) translate(-18.400000, -77.969231) " points="11.2 81.5076923 18.4 74.4307692 25.6 81.5076923"></polyline>
+                <line x1="8.49230769" y1="71.6" x2="28.3076923" y2="71.6" id="Path-2" stroke-linecap="round" transform="translate(18.400000, 71.600000) rotate(-90.000000) translate(-18.400000, -71.600000) "></line>
+                <rect id="Rectangle" transform="translate(18.400000, 71.600000) rotate(-90.000000) translate(-18.400000, -71.600000) " x="8.8817842e-14" y="53.2" width="36.8" height="36.8" rx="1.6"></rect>
+                <polyline id="Path" stroke-linecap="round" points="11.4 15.5692308 18.6 8.49230769 25.8 15.5692308"></polyline>
+                <line x1="8.69230769" y1="18.4" x2="28.5076923" y2="18.4" id="Path-2" stroke-linecap="round" transform="translate(18.600000, 18.400000) rotate(90.000000) translate(-18.600000, -18.400000) "></line>
+                <rect id="Rectangle" transform="translate(18.600000, 18.400000) rotate(90.000000) translate(-18.600000, -18.400000) " x="0.2" y="-2.48689958e-14" width="36.8" height="36.8" rx="1.6"></rect>
+            </g>
+        </g>
+    </g>
+</svg>
