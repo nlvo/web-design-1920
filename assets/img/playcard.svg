@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="13px" height="14px" viewBox="0 0 13 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 63.1 (92452) - https://sketch.com -->
+    <title>icon / playcard</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="list/card/selected" transform="translate(-33.000000, -33.000000)" fill="#1A202C">
+            <g id="icon-/-play" transform="translate(30.000000, 30.000000)">
+                <path d="M11.2339699,5.44871023 L16.3658218,14.2461706 C16.763365,14.9276734 16.5331704,15.802413 15.8516677,16.1999563 C15.6331876,16.327403 15.3847871,16.3945578 15.1318519,16.3945578 L4.86814809,16.3945578 C4.07916988,16.3945578 3.43957667,15.7549646 3.43957667,14.9659864 C3.43957667,14.7130512 3.50673152,14.4646507 3.63417824,14.2461706 L8.76603014,5.44871023 C9.1635734,4.7672075 10.038313,4.53701286 10.7198158,4.93455613 C10.9326781,5.05872582 11.1098002,5.2358479 11.2339699,5.44871023 Z" id="Triangle" transform="translate(10.000000, 9.863946) rotate(-270.000000) translate(-10.000000, -9.863946) "></path>
+            </g>
+        </g>
+    </g>
+</svg>

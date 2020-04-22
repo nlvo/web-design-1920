@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="11px" height="12px" viewBox="0 0 11 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 63.1 (92452) - https://sketch.com -->
+    <title>icon / play copy</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="button-/-default" transform="translate(-123.000000, -14.000000)" fill="#975A16">
+            <g id="icon-/-play">
+                <g transform="translate(121.000000, 12.000000)">
+                    <path d="M8.98717589,4.35896819 L13.0926574,11.3969365 C13.410692,11.9421387 13.2265363,12.6419304 12.6813341,12.959965 C12.5065501,13.0619224 12.3078297,13.1156463 12.1054815,13.1156463 L3.89451848,13.1156463 C3.2633359,13.1156463 2.75166133,12.6039717 2.75166133,11.9727891 C2.75166133,11.770441 2.80538522,11.5717206 2.90734259,11.3969365 L7.01282411,4.35896819 C7.33085872,3.813766 8.03065041,3.62961029 8.5758526,3.9476449 C8.74614247,4.04698066 8.88784013,4.18867832 8.98717589,4.35896819 Z" id="Triangle" transform="translate(8.000000, 7.891156) rotate(-270.000000) translate(-8.000000, -7.891156) "></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

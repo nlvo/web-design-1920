@@ -4,108 +4,213 @@ const firstFocusableEl = focusableEls[0];
 const lastFocusableEl = focusableEls[focusableEls.length - 1];
 const liveList = document.getElementsByTagName('input');
 const checkboxes = document.querySelectorAll('input[type="checkbox"]')
-const checkboxi = document.querySelectorAll('label')
+const songs = document.querySelectorAll('audio')
 const checkbox = document.querySelector('input[type="checkbox"]')
+const audio = document.querySelector('audio')
+const playBtn = document.querySelector('.play')
+const playBtnImage = document.querySelector('.play img')
 
-firstFocusableEl.focus();
+focusableEls[1].focus();
+
+function playPlaylist() {
+    const img = audio.parentElement.querySelector('img');
+    console.log(img);
+    if (audio.paused) {
+        playBtnImage.src = 'assets/img/pause.svg'
+        img.src = 'assets/img/sound.svg'
+        audio.play();
+    } else {
+        playBtnImage.src = 'assets/img/play.svg'
+        img.src = 'assets/img/playcard.svg'
+        audio.pause();
+    }
+}
+
+playBtn.addEventListener('click', playPlaylist);
 
 checkboxes.forEach(element => {
     // todo:cleanup
-    element.addEventListener('click', function() {
+    element.addEventListener('click', function () {
         checkboxes.forEach(a => {
-            if(a.checked){
-                console.log('fdd');
+            if (a.checked) {
                 a.checked = false
                 a.parentElement.classList.remove('active');
             }
         });
 
-        if (element.checked) {            
+        if (element.checked) {
             element.parentElement.classList.remove('active');
             element.checked = false
         } else {
             element.parentElement.classList.add('active');
             element.checked = true;
-            
+
         }
     })
 });
 
-document.addEventListener('keydown', function(event){
-    if(event.key == 'ArrowDown') {
-        checkboxes.forEach(element => {
-            if(element.checked) {
-                console.log('oooh')
-
-                const nextElement = element.parentElement.nextElementSibling;
-                const parentDiv = element.parentElement.parentNode;
-
-                parentDiv.insertBefore(nextElement, element.parentElement)
-
-            }
-        });
+document.addEventListener('keydown', function (event) {
+    // move item down
+    if (event.key == 'i') {
+        moveDown();
+    } else if (event.key == 'o') {
+        moveUp();
+    } else if (event.key == 'y') {
+        toggleCheckbox();
+    } else if (event.key == 'y') {
+        toggleCheckbox();
+    } else if (event.key === 'j') {
+        focusNextElement();
+    } else if (event.key === 'k') {
+        focusPreviousElement();
+    } else if (event.key === 'p') {
+        playSong();
+    } else if (event.key === 'l') {
+        playPlaylist();
     }
-    else if(event.key == 'ArrowUp') {
-        checkboxes.forEach(element => {
-            if(element.checked) {
-                element.focus()
-                const prevElement = element.parentElement.previousElementSibling;
-                const parentDiv = element.parentElement.parentNode;
-                console.log(event)
-                if(prevElement) {
-                    parentDiv.insertBefore(element.parentElement, prevElement)
-                }
-            }
-        });
-    }
-    else if(event.key == 'ArrowLeft') {
-        checkboxes.forEach(element => {
-
-            if(document.activeElement == element) {
-                if (element.checked) {
-                    element.parentElement.classList.remove('active');
-                    element.checked = false;
-                } else {
-                    element.parentElement.classList.add('active');
-                    element.checked = true;
-                    console.log('left!');
-                    
-                }
-                // https://stackoverflow.com/questions/36430561/how-can-i-check-if-my-element-id-has-focus
-            }
-        });
-    }
-    else if(event.key == 'ArrowRight') {
-        checkboxes.forEach(element => {
-            if(document.activeElement == element) {
-                if (element.checked) {
-                    element.parentElement.classList.remove('active');
-                    element.checked = false;
-                } else {
-                    element.parentElement.classList.add('active');
-                    element.checked = true;
-                }
-                // https://stackoverflow.com/questions/36430561/how-can-i-check-if-my-element-id-has-focus
-            }
-        });
-    }
-
-    if(event.code === 'Space') {
-        console.log(event.code);
-        
-        if (document.activeElement === document.body) {
-            firstFocusableEl.focus();
-            event.preventDefault();
-        } 
-        else {
-            document.activeElement.parentElement.nextElementSibling.focus();
-            checkboxes.forEach(element => {
-                element.parentElement.classList.remove('active');
-                element.checked = false
-            });
-        }
-    } 
 });
+
+function moveDown(){
+    // find checked checkbox
+    checkboxes.forEach(element => {
+        if (element.checked) {
+            element.focus()
+            const nextElement = element.parentElement.nextElementSibling;
+            const parentDiv = element.parentElement.parentNode;
+
+            parentDiv.insertBefore(nextElement, element.parentElement)
+        }
+    });
+}
+
+function moveUp(){
+    // find checked checkbox
+    checkboxes.forEach(element => {
+        if (element.checked) {
+            const prevElement = element.parentElement.previousElementSibling;
+            const parentDiv = element.parentElement.parentNode;
+            
+            if (prevElement) {
+                parentDiv.insertBefore(element.parentElement, prevElement)
+                element.focus()
+            }
+        }
+    });
+}
+
+function playSong() {
+    checkboxes.forEach(element => {
+        if (document.activeElement == element || element.checked) {
+            
+            const label = element.parentElement;
+            const img = element.parentElement.querySelector('img');
+            const audio = element.parentElement.getElementsByTagName('audio')[0];
+
+            if (!audio.paused) {
+                label.classList.remove('playing')
+                playBtnImage.src = 'assets/img/play.svg'
+                img.src = 'assets/img/playcard.svg'
+                audio.pause();
+            } else {
+                songs.forEach(song => {
+                    if(!song.paused) {
+                        song.pause();
+                        song.parentElement.classList.remove('playing')
+                    }
+                })
+
+                label.classList.add('playing')
+                playBtnImage.src = 'assets/img/pause.svg'
+                img.src = 'assets/img/sound.svg'
+                audio.play();
+            }
+        }
+    });
+}
+
+function pauseSong(){
+    songs.forEach(song => {
+        if(!song.paused) {
+            song.pause();
+            song.parentElement.classList.remove('playing')
+        }
+    })
+}
+
+function toggleCheckbox() {
+    // select checkbox
+    checkboxes.forEach(element => {
+        if (document.activeElement == element) {
+            if (element.checked) {
+                element.parentElement.classList.remove('active');
+                element.checked = false;
+            } else {
+
+                element.parentElement.classList.add('active');
+                element.checked = true;
+                console.log('checked!');
+            }
+            // https://stackoverflow.com/questions/36430561/how-can-i-check-if-my-element-id-has-focus
+        } 
+        // else {
+            
+        //     if(element.classList.contains('active')){
+        //         console.log(element.classList);
+        //         element.parentElement.classList.remove('active');
+        //         element.checked = false;
+        //     }
+        // }
+    });
+}
+
+function focusPreviousElement() {
+    if (document.activeElement === document.body) {
+        // firstFocusableEl.focus();
+        event.preventDefault();
+    } else {
+        for (let i = 0; i < focusableEls.length; i++) {
+            const currentFocus = focusableEls[i];
+            if (currentFocus == document.activeElement) {
+                console.log(i);
+                
+                if (i > 0) {
+                    i--
+                    focusableEls[i].focus();
+                }
+            }
+        }
+        checkboxes.forEach(element => {
+            element.parentElement.classList.remove('active');
+            element.checked = false
+        });
+    }
+}
+
+function focusNextElement() {
+    if (document.activeElement === document.body) {
+        firstFocusableEl.focus();
+        event.preventDefault();
+    } else {
+        for (let i = 0; i < focusableEls.length; i++) {
+            const currentFocus = focusableEls[i];
+            if (currentFocus == document.activeElement) {
+                
+                if (i < focusableEls.length - 1) {
+                    console.log('ha');
+                    i++
+                    focusableEls[i].focus();
+                } else {
+                    console.log('length',focusableEls.length);
+                    firstFocusableEl.focus()
+                }
+            }
+        }
+        checkboxes.forEach(element => {
+            element.parentElement.classList.remove('active');
+            element.checked = false
+        });
+    }
+}
 
 // https://htmldom.dev/drag-and-drop-element-in-a-list
 // https://css-tricks.com/snippets/javascript/javascript-keycodes/
@@ -116,9 +221,21 @@ document.addEventListener('keydown', function(event){
 // https://hiddedevries.nl/en/blog/2017-01-29-using-javascript-to-trap-focus-in-an-element
 // https://accessibility.oit.ncsu.edu/it-accessibility-at-nc-state/developers/accessibility-handbook/aria-checkbox/
 
-   // else if (document.activeElement){
-        //     console.log(Array.from(section).indexOf(document.activeElement));
 
+// focusableEls.forEach(element => {
+//     if (document.activeElement == element){
+//         console.log('element', focusableEls[1]);
 
-        //     liveList[i].parentElement.nextElementSibling.focus();
-        // }
+//         console.log(element);
+//         focusableEls
+//     }
+//     // element.parentElement.classList.remove('active');
+//     // element.checked = false
+// });
+// console.log(focusableEls);
+
+// document.activeElement.parentElement.nextElementSibling.focus();
+// checkboxes.forEach(element => {
+//     element.parentElement.classList.remove('active');
+//     element.checked = false
+// });

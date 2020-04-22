@@ -1,0 +1,89 @@
+[
+	{
+		"title": "Explosia",
+		"album": "L'Enfant Sauvage",
+		"artist": "Gojira",
+		"file": "explosia",
+		"length": "6:39"
+	},
+
+	{
+		"title": "L'Enfant Sauvage",
+		"album": "L'Enfant Sauvage",
+		"artist": "Gojira",
+		"file": "lenfant-sauvage",
+		"length": "4:17"
+	},
+
+	{
+		"title": "The Axe",
+		"album": "L'Enfant Sauvage",
+		"artist": "Gojira",
+		"file": "the-axe",
+		"length": "4:34"
+	},
+
+	{
+		"title": "Liquid Fire",
+		"album": "L'Enfant Sauvage",
+		"artist": "Gojira",
+		"file": "liquid-fire",
+		"length": "4:17"
+	},
+
+	{
+		"title": "The Wild Healer (instrumental)",
+		"album": "L'Enfant Sauvage",
+		"artist": "Gojira",
+		"file": "the-wild-healer-instrumental",
+		"length": "1:48"
+	},
+
+	{
+		"title": "Planned Obsolescence",
+		"album": "L'Enfant Sauvage",
+		"artist": "Gojira",
+		"file": "planned-obsolescence",
+		"length": "4:39"
+	},
+
+	{
+		"title": "Mouth of Kala",
+		"album": "L'Enfant Sauvage",
+		"artist": "Gojira",
+		"file": "mouth-of-kala",
+		"length": "5:51"
+	},
+
+	{
+		"title": "The Gift of Guilt",
+		"album": "L'Enfant Sauvage",
+		"artist": "Gojira",
+		"file": "the-gift-of-guilt",
+		"length": "5:56"
+	},
+
+	{
+		"title": "Pain is a Master",
+		"album": "L'Enfant Sauvage",
+		"artist": "Gojira",
+		"file": "pain-is-a-master",
+		"length": "5:07"
+	},
+
+	{
+		"title": "Born in Winter",
+		"album": "L'Enfant Sauvage",
+		"artist": "Gojira",
+		"file": "born-in-winter",
+		"length": "3:51"
+	},
+
+	{
+		"title": "The Fall",
+		"album": "L'Enfant Sauvage",
+		"artist": "Gojira",
+		"file": "the-fall",
+		"length": "5:25"
+	}
+]

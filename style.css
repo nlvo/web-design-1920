@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Metal+Mania&display=swap');
+
 :root {
     --grey-000: #ffffff;
     --grey-100: #F7FAFC;
@@ -6,10 +8,12 @@
     --grey-900: #1A202C;
     --red-600: #E53E3E;
     --green-500: #38A169;
+    --yellow-500: #FFB92D;
 }
 
 :focus{
     box-shadow: 0 0 0 8px rgba(245,101,101,.5);
+    outline: none;
 }
 
 body {
@@ -21,22 +25,53 @@ body {
 
 h1 {
     color: var(--red-600);
+    font-family: 'Metal Mania', cursive;
+    margin: 0;
 }
 
 header {
+    align-items: center;
     display: flex;
     padding: 0 2em;
+    font-family: 'Metal Mania', cursive;
+}
+
+header div {
+    flex: 1;
+}
+
+header button {
+    background: var(--yellow-500);
+    border: none;
+    border-radius: .625em;
+    color: #744210;
+    font-size: 1em;
+    padding: .625em 1.250em;
+}
+
+header button:focus {
+    box-shadow: 0 0 0 7px rgba(255,206,108,0.40);
+}
+
+header button img {
+    padding: 0 .25em;
 }
 
 header span:first-child {
     flex: 1;
+    padding: 0;
     width: 3em;
 }
 
 header span {
     /* margin-left: auto; */
+    color: var(--grey-400);
     padding: 0 1em;
     flex: 2;
+}
+
+header span:last-child {
+    flex: 1;
 }
 
 section {
@@ -55,10 +90,20 @@ section label:focus-within {
 }
 
 section label:first-of-type:focus-within:before {
-    content: url('img/spacebar.svg');
+    content: url('assets/img/jk.svg');
     width: 100%;
     height: 100%;
-    left: -6em;
+    left: -4em;
+    position: absolute;
+    display: flex;
+    align-items: center;
+}
+
+section label:nth-of-type(2):focus-within:before {
+    content: url('assets/img/p.svg');
+    width: 100%;
+    height: 100%;
+    left: -4em;
     position: absolute;
     display: flex;
     align-items: center;
@@ -69,7 +114,7 @@ section label[for]:focus{
 }
 
 section label:focus-within:before {
-    content: url('img/arrow-left.svg');
+    content: url('assets/img/yank.svg');
     width: 100%;
     height: 100%;
     left: -4em;
@@ -78,19 +123,16 @@ section label:focus-within:before {
     align-items: center;
 }
 
-section label[for]:before {
-    content: '<';
-    display: block;
-    width: 100%;
-    height: 100%;
+section label:focus-within img {
+    opacity: 1;
 }
 
 label {
     background-color: var(--grey-000);
     border-radius: .625em;
     color: var(--grey-900);
-    margin: 1em 0;
-    padding: 1.2em;
+    margin: 1.4em 0;
+    padding: 1em;
     display: flex;
     position: relative;
     align-items: center;
@@ -108,14 +150,23 @@ label.active:focus-within {
     box-shadow: 0 0 0 8px rgba(56, 161, 105,.4);
 }
 
-label.active:focus-within:before {
-    content: url('img/arrow-up-down.svg');
+label.active:before,
+section label.active:focus-within:before {
+    content: url('assets/img/op.svg');
     width: 100%;
     height: 100%;
     left: -4em;
     position: absolute;
     display: flex;
     align-items: center;
+}
+
+label:focus img{
+    opacity: 1;
+}
+
+label.playing img {
+    opacity: 1;
 }
 
 /* label.active:after {
@@ -129,14 +180,18 @@ label.active:focus-within:before {
 } */
 
 label img {
-    border-radius: .625em;
-    width: 3em;
-    flex: 1;
+    opacity: 0;
+    transition: all .3s ease-in;
+    width: .625em;
 }
 
 label span {
     flex: 2;
     padding: 0 1em;
+}
+
+label span:last-child {
+    flex: 1;
 }
 
 label input {
@@ -158,6 +213,7 @@ input:checked:before{
     border-radius: 1em;
     box-sizing: border-box;
 }
+
 @media screen and (min-width: 48em) {
     main {
         display: flex;
@@ -165,7 +221,7 @@ input:checked:before{
         justify-content: center;
         align-items: center;
     }
-    header {
+    main > header {
         width: 60%;
     }
     section {
