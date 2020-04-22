@@ -14,7 +14,6 @@ focusableEls[1].focus();
 
 function playPlaylist() {
     const img = audio.parentElement.querySelector('img');
-    console.log(img);
     if (audio.paused) {
         playBtnImage.src = 'assets/img/pause.svg'
         img.src = 'assets/img/sound.svg'
@@ -152,8 +151,7 @@ function toggleCheckbox() {
             }
             // https://stackoverflow.com/questions/36430561/how-can-i-check-if-my-element-id-has-focus
         } 
-        // else {
-            
+        // else {    
         //     if(element.classList.contains('active')){
         //         console.log(element.classList);
         //         element.parentElement.classList.remove('active');
@@ -170,9 +168,7 @@ function focusPreviousElement() {
     } else {
         for (let i = 0; i < focusableEls.length; i++) {
             const currentFocus = focusableEls[i];
-            if (currentFocus == document.activeElement) {
-                console.log(i);
-                
+            if (currentFocus == document.activeElement) {                
                 if (i > 0) {
                     i--
                     focusableEls[i].focus();
@@ -196,11 +192,9 @@ function focusNextElement() {
             if (currentFocus == document.activeElement) {
                 
                 if (i < focusableEls.length - 1) {
-                    console.log('ha');
                     i++
                     focusableEls[i].focus();
                 } else {
-                    console.log('length',focusableEls.length);
                     firstFocusableEl.focus()
                 }
             }
@@ -220,22 +214,3 @@ function focusNextElement() {
 // https://stackoverflow.com/questions/56102665/is-it-possible-to-update-refresh-nodelist
 // https://hiddedevries.nl/en/blog/2017-01-29-using-javascript-to-trap-focus-in-an-element
 // https://accessibility.oit.ncsu.edu/it-accessibility-at-nc-state/developers/accessibility-handbook/aria-checkbox/
-
-
-// focusableEls.forEach(element => {
-//     if (document.activeElement == element){
-//         console.log('element', focusableEls[1]);
-
-//         console.log(element);
-//         focusableEls
-//     }
-//     // element.parentElement.classList.remove('active');
-//     // element.checked = false
-// });
-// console.log(focusableEls);
-
-// document.activeElement.parentElement.nextElementSibling.focus();
-// checkboxes.forEach(element => {
-//     element.parentElement.classList.remove('active');
-//     element.checked = false
-// });
