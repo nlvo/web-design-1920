@@ -1,3 +1,4 @@
+const body = document.querySelector('body');
 const section = document.querySelector('section').children;
 const focusableEls = document.querySelectorAll('a[href]:not([disabled]), button:not([disabled]), textarea:not([disabled]), input[type="text"]:not([disabled]), input[type="radio"]:not([disabled]), input[type="checkbox"]:not([disabled]), select:not([disabled])');
 const firstFocusableEl = focusableEls[0];
@@ -110,6 +111,7 @@ function playSong() {
                 playBtnImage.src = 'assets/img/play.svg'
                 img.src = 'assets/img/playcard.svg'
                 audio.pause();
+                body.classList.remove('mood');
             } else {
                 songs.forEach(song => {
                     if(!song.paused) {
@@ -117,11 +119,12 @@ function playSong() {
                         song.parentElement.classList.remove('playing')
                     }
                 })
-
+                
                 label.classList.add('playing')
                 playBtnImage.src = 'assets/img/pause.svg'
                 img.src = 'assets/img/sound.svg'
                 audio.play();
+                body.classList.add('mood');
             }
         }
     });
