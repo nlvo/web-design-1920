@@ -10,6 +10,7 @@ const checkbox = document.querySelector('input[type="checkbox"]')
 const audio = document.querySelector('audio')
 const playBtn = document.querySelector('.play')
 const playBtnImage = document.querySelector('.play img')
+const div = document.querySelector('.playlist')
 
 focusableEls[1].focus();
 
@@ -51,11 +52,7 @@ checkboxes.forEach(element => {
 
 document.addEventListener('keydown', function (event) {
     // move item down
-    if (event.key == 'i') {
-        moveDown();
-    } else if (event.key == 'o') {
-        moveUp();
-    } else if (event.key == 'y') {
+    if (event.key == 'y') {
         toggleCheckbox();
     } else if (event.key == 'y') {
         toggleCheckbox();
@@ -65,8 +62,10 @@ document.addEventListener('keydown', function (event) {
         focusPreviousElement();
     } else if (event.key === 'p') {
         playSong();
-    } else if (event.key === 'l') {
+    } else if (event.key === 'p') {
         playPlaylist();
+    } else if (event.key === 'g') {
+        placeCard();
     }
 });
 
@@ -141,26 +140,31 @@ function pauseSong(){
 
 function toggleCheckbox() {
     // select checkbox
+    console.log('selected');
+    
     checkboxes.forEach(element => {
-        if (document.activeElement == element) {
+        // check if anything is focused
+        if (document.activeElement == element) {            
             if (element.checked) {
                 element.parentElement.classList.remove('active');
+                div.classList.remove('active');
                 element.checked = false;
             } else {
-
                 element.parentElement.classList.add('active');
+                div.classList.add('active');
                 element.checked = true;
                 console.log('checked!');
             }
             // https://stackoverflow.com/questions/36430561/how-can-i-check-if-my-element-id-has-focus
         } 
-        // else {    
-        //     if(element.classList.contains('active')){
-        //         console.log(element.classList);
-        //         element.parentElement.classList.remove('active');
-        //         element.checked = false;
-        //     }
-        // }
+        else {   
+            // check if anything is already selected 
+            if(element.parentElement.classList.contains('active')){
+                console.log('duh',element.classList);
+                element.parentElement.classList.remove('active');
+                element.checked = false;
+            }
+        }
     });
 }
 
@@ -202,10 +206,30 @@ function focusNextElement() {
                 }
             }
         }
-        checkboxes.forEach(element => {
-            element.parentElement.classList.remove('active');
-            element.checked = false
-        });
+        // checkboxes.forEach(element => {
+        //     element.parentElement.classList.remove('active');
+        //     element.checked = false
+        // });
+    }
+}
+
+function placeCard(){
+    for (let i = 0; i < focusableEls.length; i++) {
+        const currentFocus = focusableEls[i];
+        if (currentFocus == document.activeElement) {
+
+            checkboxes.forEach(element => {
+                if (element.checked) {
+                    const nextElement = currentFocus.parentElement.nextElementSibling;
+                    const parentDiv = element.parentElement.parentNode;
+                    parentDiv.insertBefore(element.parentElement, nextElement)
+                    element.parentElement.focus()
+                    console.log(element.parentElement.classList);   
+                }
+                div.classList.remove('active')
+                element.parentElement.classList.remove('active')
+            }); 
+        }
     }
 }
 
