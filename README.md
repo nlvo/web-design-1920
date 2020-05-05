@@ -1,7 +1,19 @@
-# Move-down
-[🚀live 🚀](https://nlvo.github.io/web-design-1920/)
-[testplan](https://github.com/nlvo/web-design-1920/wiki/Testplan)
+# Move-It
+Move it is a music application where you can customize a playlist and listen to it, using your keyboard.
 
-![design from move down application](https://user-images.githubusercontent.com/8554238/79343560-d101ca00-7f2e-11ea-9c11-21a491bd9141.png)
+[🚀 Live website 🚀](https://nlvo.github.io/web-design-1920/)
+![move-it](https://user-images.githubusercontent.com/8554238/81085854-0b400500-8ef8-11ea-839e-f75d759ef333.png)
 
-[wiki](https://github.com/nlvo/web-design-1920/wiki/)
+For a more information about Move It I would refer to the [wiki](https://github.com/nlvo/web-design-1920/wiki/).
+
+## Installation
+```
+# Clone or download the repository
+$ git clone https://nlvo.github.io/web-app-from-scratch-1920/
+
+# Open
+Find the index.html and open it in your browser
+```
+
+## Concept
+A playlist which you can customize by using only keys and play songs. The idea behind it is that you would have a music app where you can listen to your favourite songs and playlists. And add songs to a playlist which you than can adjust.
