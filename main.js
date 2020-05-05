@@ -182,10 +182,10 @@ function focusPreviousElement() {
                 }
             }
         }
-        checkboxes.forEach(element => {
-            element.parentElement.classList.remove('active');
-            element.checked = false
-        });
+        // checkboxes.forEach(element => {
+        //     element.parentElement.classList.remove('active');
+        //     element.checked = false
+        // });
     }
 }
 
