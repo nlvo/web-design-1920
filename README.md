@@ -16,4 +16,4 @@ Find the index.html and open it in your browser
 ```
 
 ## Concept
-A playlist which you can customize by using only keys and play songs. The idea behind it is that you would have a music app where you can listen to your favourite songs and playlists. And add songs to a playlist which you than can adjust.
+A playlist which you can customize and play songs by using only keys. The idea behind it is that you would have a music app where you can listen to your favourite songs and playlists. And add songs to a playlist which you than can adjust.
